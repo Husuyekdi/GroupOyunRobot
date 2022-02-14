@@ -273,7 +273,7 @@ bot.command("stop", ctx => {
 	}
 })
 
-bot.command("ccginfo", ctx => {
+bot.command("cguessresmi", ctx => {
 	return ctx.replyWithMarkdown(
 		trueTrim(`
 			cGuessGameBot
