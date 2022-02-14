@@ -28,9 +28,9 @@ const getGreetMessage = isGroup =>
 	/stop - 🛑 Oyunu Dayandır
 	/catreyting - 🔝 Çat Reyting 
 	/qlobalreyting - 🌎 Qlobal Reyting
-	/cguessresmi - 📌 cGuessGame Rəsmi
+	/ccginfo - 📌 cGuessGame Rəsmi
 
-	müəllif: @shakoHSYNVH
+	SAHiBiM: @CCG_Owner
 	Rəsmi Kanal: @@cguessgame
 `)
 const getRandomPerson = () => {
@@ -273,15 +273,15 @@ bot.command("stop", ctx => {
 	}
 })
 
-bot.command("cguessresmi", ctx => {
+bot.command("ccginfo", ctx => {
 	return ctx.replyWithMarkdown(
 		trueTrim(`
 			cGuessGameBot
 
-			✨ Rəsmi Kanal: @cguessgame
-			✨ Qurucu: @CGG_Owner
-			✨ RƏSMİ Qrup: @cguessold
-			✨ Rəsmi Botlar: Tezliklə
+			✨Rəsmi Kanal: @cguessgame
+			✨Qurucu: @CGG_Owner
+			✨RƏSMİ Qrup: @cguessold
+			✨Rəsmi Botlar: Tezliklə
 		`)
 	)
 })
@@ -373,7 +373,7 @@ bot.command("qlobalreyting", ctx => {
 			trueTrim(`
 			*🔝 Qlobal Oyunçu Reytinqi:*
 
-			${topSlice.map((member, index) => `${["🏆", "🎖", "🏅"][index] || "🔸"} ${index + 1}. ${fromId === member.id ? "⚡Sənən Xalın⚡: " : ""}${bold(member.firstName)}: ${numberWithSpaces(member.score)} ${pluralize(member.score, "⚡xal", "⚡xal", "⚡xal")}`).join("\n")}
+			${topSlice.map((member, index) => `${["🏆", "🎖", "🏅"][index] || "🔸"} ${index + 1}. ${fromId === member.id ? "⚡Sənin Xalın⚡: " : ""}${bold(member.firstName)}: ${numberWithSpaces(member.score)} ${pluralize(member.score, "⚡xal", "⚡xal", "⚡xal")}`).join("\n")}
 			${currentUser ? `...\n🔸 ${currentUser.index + 1}. ${bold(currentUser.firstName)}: ${numberWithSpaces(currentUser.score)} ${pluralize(currentUser.score, "⚡xal", "⚡xal", "⚡xal")}\n` : ""}
 			❤️ Bəzən yeni sərin botların dərc olunduğu müəllif kanalı @cguessgame.
 			🔄 /game - Bir daha?
