@@ -276,7 +276,7 @@ bot.command("stop", ctx => {
 bot.command("cguessresmi", ctx => {
 	return ctx.replyWithMarkdown(
 		trueTrim(`
-			cGuessGameBot
+			Creator Guess Game Official
 
 			Rəsmi Kanal: @cguessgame
 			Qurucu: @CGG_Owner
