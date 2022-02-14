@@ -30,7 +30,7 @@ const getGreetMessage = isGroup =>
 	/qlobalreyting - 🌎 Qlobal Reyting
 	/cguessresmi - 📌 cGuessGame Rəsmi
 
-	müəllif: @shakoHSYNVH
+	müəllif: @CCG_Owner
 	Rəsmi Kanal: @cguessgame
 `)
 const getRandomPerson = () => {
@@ -278,10 +278,10 @@ bot.command("cguessresmi", ctx => {
 		trueTrim(`
 			cGuessGameBot
 
-			✨Rəsmi Kanal: @cguessgame
-			✨Qurucu: @CGG_Owner
-			✨RƏSMİ Qrup: @cguessold
-			✨Rəsmi Botlar: Tezliklə
+			Rəsmi Kanal: @cguessgame
+			Qurucu: @CGG_Owner
+			RƏSMİ Qrup: @cguessold
+			Rəsmi Botlar: Tezliklə
 		`)
 	)
 })
