@@ -28,9 +28,9 @@ const getGreetMessage = isGroup =>
 	/stop - 🛑 Oyunu Dayandır
 	/catreyting - 🔝 Çat Reyting 
 	/qlobalreyting - 🌎 Qlobal Reyting
-	/ccginfo - 📌 cGuessGame Rəsmi
+	/cguessresmi - 📌 cGuessGame Rəsmi
 
-	SAHiBiM: @CCG_Owner
+	müəllif: @shakoHSYNVH
 	Rəsmi Kanal: @cguessgame
 `)
 const getRandomPerson = () => {
