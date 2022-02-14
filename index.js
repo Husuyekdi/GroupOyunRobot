@@ -138,9 +138,9 @@ const getRoundMessage = (chatId, round, time) => {
 	return trueTrim(`
 		*♻ Raund ♻ ${round + 1}/${config.rounds}*
 		Sizcə bu adam neçə yaşındadır? 🤔
-                👤 Şəkildəki adamın yaşını təxmin et
-                🕰 Vaxd 14 Saniyə
-                ♟ Rəsmi Kanal: @cguessgame
+👤 Şəkildəki adamın yaşını təxmin et
+🕰 Vaxd 14 Saniyə
+♟ Rəsmi Kanal: @cguessgame
 		${answers.length > 0 ? `\n${answers.map((member, index) => `${index + 1}. *${member.firstName}*: ${member.answer}`).join("\n")}\n` : ""}
 		${"⬛".repeat(time)}${"⬜".repeat(config.timerSteps - time)}
 	`)
@@ -400,7 +400,7 @@ bot.on("message", async ctx => {
 			let firstName = message.from.first_name
 			let answer = Number(message.text)
 			if (answer <= 0 || answer > 120) {
-				return ctx.reply("Ответ вне допустимого диапазона (1 - 120)", {
+				return ctx.reply("Cavab diapazondan kənarda (1 - 120)", {
 					reply_to_message_id: ctx.message.message_id,
 				})
 			}
