@@ -1,3 +1,6 @@
+const fs = require("fs")
+const dbfile = "./db.json"
+
 {
   "usage": {
     "ok": true,
