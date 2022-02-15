@@ -1,28 +1,29 @@
 const fs = require("fs")
 const dbfile = "./db.json"
 
-{
-  "usage": {
-    "ok": true,
-    "url": "https://my-json-server.typicode.com/topkecleon/telegram-bot-bash/usage?",
-    "description": "Testing of JSON responses for github.com/topkecleon/telegram-bot-bash, replace usage with the dataset you want to query"
-  },
-  "false": {
-    "ok": false,
-    "error_code": 404,
-    "description": "Not Found"
-  },
-  "true": {
-    "ok": true,
-    "description": "Test for ok"
-  },
-  "getMe": {
-    "ok": true,
-    "result": {
-      "id": 123456789,
-      "is_bot": true,
-      "first_name": "bashbot",
-      "username": "TestBotBash"
-    }
-  }
+const db = {
+	read: () => {
+		return JSON.parse(fs.readFileSync(dbfile))
+	},
+	write: json => {
+		fs.writeFileSync(dbfile, JSON.stringify(json))
+	},
+	insert: (key, data) => {
+		let dbjson = db.read()
+		dbjson[key] = data
+		db.write(dbjson)
+	},
+	get: key => {
+		let dbjson = db.read()
+		return dbjson[key]
+	},
+	update: (key, r) => {
+		let dbjson = db.read()
+		if (dbjson[key]) {
+			dbjson[key] = r(dbjson[key])
+			db.write(dbjson)
+		}
+	}
 }
+
+module.exports = db
