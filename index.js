@@ -30,7 +30,7 @@ const getGreetMessage = isGroup =>
 	/qlobalreyting - 🌎 Qlobal Reyting
 	/cguessresmi - 📌 cGuessGame Rəsmi
 
-	müəllif: @CCG_Owner
+	müəllif: @shakoHSYNVH
 	Rəsmi Kanal: @cguessgame
 `)
 const getRandomPerson = () => {
