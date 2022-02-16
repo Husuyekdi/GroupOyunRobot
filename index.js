@@ -28,7 +28,7 @@ const getGreetMessage = isGroup =>
 	/stop - 🛑 Oyunu Dayandır
 	/catreyting - 🔝 Çat Reyting 
 	/qlobalreyting - 🌎 Qlobal Reyting
-	/cgmelumat - 📌 cGuessGame Rəsmi
+	/cgmelumat - 📌 CGG 
 
 	müəllif: @foundersh
 	Rəsmi Kanal: @@cguessgame
@@ -110,7 +110,7 @@ const stopGame = (ctx, chatId) => {
 		} else {
 			ctx.replyWithMarkdown(
 				trueTrim(`
-					*🏁 Yaxşı, mən oyunu bitirirəm.*
+					*🏁 Oyun Oynamadığınız Üçün Qalib Yoxdur. .*
 
 					❤️ Botun Rəsmi Kanalına Abunə Olmağı Unutmayaq. @cguessgame.
 					🔄 /game - Bir daha?
@@ -138,9 +138,9 @@ const getRoundMessage = (chatId, round, time) => {
 	return trueTrim(`
 		*♻ Raund ♻ ${round + 1}/${config.rounds}*
 		Sizcə bu adam neçə yaşındadır? 🤔
-                👤 Şəkildəki adamın yaşını təxmin et
-                🕰 Vaxd 14 Saniyə
-                ♟ Rəsmi Kanal: @cguessgame
+👤 Şəkildəki adamın yaşını təxmin et
+🕰 Vaxd 14 Saniyə
+♟ Rəsmi Kanal: @cguessgame
 		${answers.length > 0 ? `\n${answers.map((member, index) => `${index + 1}. *${member.firstName}*: ${member.answer}`).join("\n")}\n` : ""}
 		${"⬛".repeat(time)}${"⬜".repeat(config.timerSteps - time)}
 	`)
@@ -280,8 +280,8 @@ bot.command("cgmelumat", ctx => {
 
 			✨ Rəsmi Kanal: @cguessgame
 			✨ Qurucu: @foundersh
-			✨ Rəsmi instagram Botu: @CGGInstagramBot
-			✨ Rəsmi Musiqi Botu: @CGGMusicBot
+			✨ Rəsmi instagram Bot: @CGGInstagramBot
+			✨ Rəsmi Musiqi Bot: @CGGMusicMBOT
 		`)
 	)
 })
