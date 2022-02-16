@@ -256,7 +256,7 @@ bot.command("game", ctx => {
 		} else {
 			createChat(chatId)
 		}
-		ctx.replyWithMarkdown("*🎉 Oyun Başlayır Rəsmi Kanalımız ⚡ @cguessgame ⚡ Dəsdək Olarsınız 🖇*")
+		ctx.replyWithMarkdown("*🎉 Creator - la Oyun Başlayır Rəsmi Kanalımız ⚡ @cguessgame ⚡ Dəsdək Olarsınız 🖇*")
 		startGame(ctx, chatId)
 	} else {
 		ctx.reply("⚠ Bu əmr yalnız söhbətlər üçün əlçatandır.")
@@ -373,8 +373,8 @@ bot.command("qlobalreyting", ctx => {
 			trueTrim(`
 			*🔝 Qlobal Oyunçu Reytinqi:*
 
-			${topSlice.map((member, index) => `${["🏆", "🎖", "🏅"][index] || "🔸"} ${index + 1}. ${fromId === member.id ? "Вы: " : ""}${bold(member.firstName)}: ${numberWithSpaces(member.score)} ${pluralize(member.score, "nöqtə", "xal", "очков")}`).join("\n")}
-			${currentUser ? `...\n🔸 ${currentUser.index + 1}. ${bold(currentUser.firstName)}: ${numberWithSpaces(currentUser.score)} ${pluralize(currentUser.score, "nöqtə", "nöqtə", "xal")}\n` : ""}
+			${topSlice.map((member, index) => `${["🏆", "🎖", "🏅"][index] || "🔸"} ${index + 1}. ${fromId === member.id ? "Вы: " : ""}${bold(member.firstName)}: ${numberWithSpaces(member.score)} ${pluralize(member.score, "⚡xal", "⚡xal", "⚡xal")}`).join("\n")}
+			${currentUser ? `...\n🔸 ${currentUser.index + 1}. ${bold(currentUser.firstName)}: ${numberWithSpaces(currentUser.score)} ${pluralize(currentUser.score, "⚡xal", "⚡xal", "⚡xal")}\n` : ""}
 			❤️ Bəzən yeni sərin botların dərc olunduğu müəllif kanalı @cguessgame.
 			🔄 /game - Bir daha?
 		`)
