@@ -1,4 +1,4 @@
-﻿const {Telegraf, Telegram} = require("telegraf")
+const {Telegraf, Telegram} = require("telegraf")
 const config = require("./config")
 const db = require("./db")
 const fs = require("fs")
@@ -28,10 +28,10 @@ const getGreetMessage = isGroup =>
 	/stop - 🛑 Oyunu Dayandır
 	/catreyting - 🔝 Çat Reyting 
 	/qlobalreyting - 🌎 Qlobal Reyting
-	/cguessresmi - 📌 cGuessGame Rəsmi
+	/cgmelumat - 📌 cGuessGame Rəsmi
 
-	müəllif: @shakoHSYNVH
-	Rəsmi Kanal: @cguessgame
+	müəllif: @foundersh
+	Rəsmi Kanal: @@cguessgame
 `)
 const getRandomPerson = () => {
 	let imagePath = "./photos"
@@ -138,9 +138,9 @@ const getRoundMessage = (chatId, round, time) => {
 	return trueTrim(`
 		*♻ Raund ♻ ${round + 1}/${config.rounds}*
 		Sizcə bu adam neçə yaşındadır? 🤔
-👤 Şəkildəki adamın yaşını təxmin et
-🕰 Vaxd 14 Saniyə
-♟ Rəsmi Kanal: @cguessgame
+                👤 Şəkildəki adamın yaşını təxmin et
+                🕰 Vaxd 14 Saniyə
+                ♟ Rəsmi Kanal: @cguessgame
 		${answers.length > 0 ? `\n${answers.map((member, index) => `${index + 1}. *${member.firstName}*: ${member.answer}`).join("\n")}\n` : ""}
 		${"⬛".repeat(time)}${"⬜".repeat(config.timerSteps - time)}
 	`)
@@ -273,15 +273,15 @@ bot.command("stop", ctx => {
 	}
 })
 
-bot.command("cguessresmi", ctx => {
+bot.command("cgmelumat", ctx => {
 	return ctx.replyWithMarkdown(
 		trueTrim(`
-			Creator Guess Game Official
+			cGuessGameBot
 
-			Rəsmi Kanal: @cguessgame
-			Qurucu: @CGG_Owner
-			RƏSMİ Qrup: @cguessold
-			Rəsmi Botlar: Tezliklə
+			✨ Rəsmi Kanal: @cguessgame
+			✨ Qurucu: @foundersh
+			✨ Rəsmi instagram Botu: @CGGInstagramBot
+			✨ Rəsmi Musiqi Botu: @CGGMusicBot
 		`)
 	)
 })
@@ -373,8 +373,8 @@ bot.command("qlobalreyting", ctx => {
 			trueTrim(`
 			*🔝 Qlobal Oyunçu Reytinqi:*
 
-			${topSlice.map((member, index) => `${["🏆", "🎖", "🏅"][index] || "🔸"} ${index + 1}. ${fromId === member.id ? "⚡Sənin Xalın⚡: " : ""}${bold(member.firstName)}: ${numberWithSpaces(member.score)} ${pluralize(member.score, "⚡xal", "⚡xal", "⚡xal")}`).join("\n")}
-			${currentUser ? `...\n🔸 ${currentUser.index + 1}. ${bold(currentUser.firstName)}: ${numberWithSpaces(currentUser.score)} ${pluralize(currentUser.score, "⚡xal", "⚡xal", "⚡xal")}\n` : ""}
+			${topSlice.map((member, index) => `${["🏆", "🎖", "🏅"][index] || "🔸"} ${index + 1}. ${fromId === member.id ? "Вы: " : ""}${bold(member.firstName)}: ${numberWithSpaces(member.score)} ${pluralize(member.score, "nöqtə", "xal", "очков")}`).join("\n")}
+			${currentUser ? `...\n🔸 ${currentUser.index + 1}. ${bold(currentUser.firstName)}: ${numberWithSpaces(currentUser.score)} ${pluralize(currentUser.score, "nöqtə", "nöqtə", "xal")}\n` : ""}
 			❤️ Bəzən yeni sərin botların dərc olunduğu müəllif kanalı @cguessgame.
 			🔄 /game - Bir daha?
 		`)
@@ -400,7 +400,7 @@ bot.on("message", async ctx => {
 			let firstName = message.from.first_name
 			let answer = Number(message.text)
 			if (answer <= 0 || answer > 120) {
-				return ctx.reply("Cavab diapazondan kənarda (1 - 120)", {
+				return ctx.reply("Ответ вне допустимого диапазона (1 - 120)", {
 					reply_to_message_id: ctx.message.message_id,
 				})
 			}
