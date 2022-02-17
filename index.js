@@ -31,7 +31,7 @@ const getGreetMessage = isGroup =>
 	/cgmelumat - 📌 CGG 
 
 	müəllif: @foundersh
-	Rəsmi Kanal: @@cguessgame
+	Rəsmi Kanal: @cguessgame
 `)
 const getRandomPerson = () => {
 	let imagePath = "./photos"
