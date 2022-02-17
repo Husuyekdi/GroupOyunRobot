@@ -372,6 +372,7 @@ bot.command("qlobalreyting", ctx => {
 		ctx.replyWithMarkdown(
 			trueTrim(`
 			*🌎 Qlobal Oyunçuların Reytingi.:*
+			*❄️ Qış Sezonu Başladı. ❄️*
 
 			${topSlice.map((member, index) => `${["🏆", "🎖", "🏅"][index] || "🔸"} ${index + 1}. ${fromId === member.id ? "Sənin Xal: " : ""}${bold(member.firstName)}: ${numberWithSpaces(member.score)} ${pluralize(member.score, "⚡xal", "⚡xal", "⚡xal")}`).join("\n")}
 			${currentUser ? `...\n🔸 ${currentUser.index + 1}. ${bold(currentUser.firstName)}: ${numberWithSpaces(currentUser.score)} ${pluralize(currentUser.score, "⚡xal", "⚡xal", "⚡xal")}\n` : ""}
