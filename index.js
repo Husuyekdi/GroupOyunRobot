@@ -28,7 +28,11 @@ const getGreetMessage = isGroup =>
 	/stop - 🛑 Oyunu Dayandır
 	/catreyting - 🔝 Çat Reyting 
 	/qlobalreyting - 🌎 Qlobal Reyting
-	/cgmelumat - 📌 CGG 
+	/cgmelumat - 📌 CGG
+	
+	ℹ️ Qurmaq 
+Məni Qrupuna Əlavə Edərək Adminlik Hüquqlarimi Ver /game Əmriylə Oyunu Başlada Bilərsiniz.
+Qrup Medyasının Açıq Olmağı Mütləqdir.
 
 	müəllif: @foundersh
 	Rəsmi Kanal: @cguessgame
@@ -136,11 +140,15 @@ const getRoundMessage = (chatId, round, time) => {
 	answers = answers.sort((a, b) => gameStates[chatId].answersOrder.indexOf(a.memberId) - gameStates[chatId].answersOrder.indexOf(b.memberId))
 
 	return trueTrim(`
-		*♻ Raund ♻ ${round + 1}/${config.rounds}*
-		Sizcə bu adam neçə yaşındadır? 🤔
-👤 Şəkildəki adamın yaşını təxmin et
-🕰 Vaxd 14 Saniyə
-♟ Rəsmi Kanal: @cguessgame
+		*❕ Raund  ${round + 1}/${config.rounds}*
+		🪁 Sizcə Şəkildəki Şəxs Neçə Yaşındadır 🤔
+📌 Məntiq Şəxsin Yaşını Tapmaq.
+⏱️ Vaxt 14 Saniyyə
+🆘 Rəsmi Kanalımız 🆘
+❄️ Qış Sezonu Qalibi Sən Ol ❄️
+1 - ci Yer (15 Azn) 💸
+2 - ci Yer ( 10 Azn)💸
+3 - cü Yer ( 5 Azn) 💸
 		${answers.length > 0 ? `\n${answers.map((member, index) => `${index + 1}. *${member.firstName}*: ${member.answer}`).join("\n")}\n` : ""}
 		${"⬛".repeat(time)}${"⬜".repeat(config.timerSteps - time)}
 	`)
@@ -195,8 +203,8 @@ const startGame = (ctx, chatId) => {
 			if (!top.every(member => member.answer === null)) {
 				ctx.replyWithMarkdown(
 					trueTrim(`
-						Bu şəkildəki  şəxs *${rightAnswer} ${pluralize(rightAnswer, "yaş", "yaş", "yaş")}*. kim ən yaxın idi:
-ki 
+						🎉 Şəkildəki Şəxs *${rightAnswer} ${pluralize(rightAnswer, "yaş", "yaş", "yaş")}*. Yaxın Olan Üzvlər 🎉
+						
 						${top
 							.sort((a, b) => b.addScore - a.addScore)
 							.map((member, index) => `${["🏆", "🎖", "🏅"][index] || "🔸"} ${index + 1}. ${bold(member.firstName)}: ${plusminus(member.addScore)}`)
@@ -207,7 +215,7 @@ ki
 					}
 				)
 			} else {
-				ctx.reply("🤔 Deyəsən oynamırsan. Yaxşı, mən oyunu bitirirəm...")
+				ctx.reply("❕ Oynamadığınız Üçün Oyunu Sonlandırdım ❕.")
 				stopGame(ctx, chatId)
 				return
 			}
@@ -244,7 +252,7 @@ bot.command("game", ctx => {
 		let chat = getChat(chatId)
 		if (chat) {
 			if (chat.isPlaying) {
-				return ctx.reply("❌ Sizdə artıq oyun var. Komanda ilə dayandıra bilərsiniz /stop.")
+				return ctx.reply("🆘 Hal Hazırda Yarımçıq Oyununuz Var /Stop Əmriylə Sonlandıra Bilərsiniz. 🆘")
 			} else {
 				chat.isPlaying = true
 				for (let key in chat.members) {
@@ -256,10 +264,10 @@ bot.command("game", ctx => {
 		} else {
 			createChat(chatId)
 		}
-		ctx.replyWithMarkdown("*🎉 Creator - la Oyun Başlayır Rəsmi Kanalımız ⚡ @cguessgame ⚡  🖇*")
+		ctx.replyWithMarkdown("*🥰 Təxmin Oyunu Başlayır Hər Birinizə Uğurlar. 🥰*")
 		startGame(ctx, chatId)
 	} else {
-		ctx.reply("⚠ Bu əmr yalnız söhbətlər üçün əlçatandır.")
+		ctx.reply("🆘 Bu Əmr Qruplar Üçün Təyin Olunub 🆘")
 	}
 })
 
@@ -276,12 +284,10 @@ bot.command("stop", ctx => {
 bot.command("cgmelumat", ctx => {
 	return ctx.replyWithMarkdown(
 		trueTrim(`
-			cGuessGameBot
+			🎈 Bizi Seçdiyiniz Üçün Təşəkkürlər 🎈
 
-			✨ Rəsmi Kanal: @cguessgame
-			✨ Qurucu: @foundersh
-			✨ Rəsmi instagram Bot: @CGGInstagramBot
-			✨ Rəsmi Musiqi Bot: @CGGMusicMBOT
+			✅ Rəsmi Kanal: @cguessgame 
+                        🧑‍💻 Qurucu: @foundersh
 		`)
 	)
 })
@@ -326,7 +332,7 @@ bot.command("catreyting", ctx => {
 			ctx.reply("❌ Bu çatda hələ heç bir oyun oynamamısınız.")
 		}
 	} else {
-		ctx.reply("❌ Bu əmr yalnız söhbətlər üçün əlçatandır.")
+		ctx.reply("🆘 Bu Əmr Qruplar Üçün Təyin Olunub 🆘")
 	}
 })
 
@@ -372,6 +378,7 @@ bot.command("qlobalreyting", ctx => {
 		ctx.replyWithMarkdown(
 			trueTrim(`
 			*🌎 Qlobal Oyunçuların Reytingi.:*
+			
 			*❄️ Qış Sezonu Başladı. ❄️*
 
 			${topSlice.map((member, index) => `${["🏆", "🎖", "🏅"][index] || "🔸"} ${index + 1}. ${fromId === member.id ? "Sənin Xal: " : ""}${bold(member.firstName)}: ${numberWithSpaces(member.score)} ${pluralize(member.score, "⚡xal", "⚡xal", "⚡xal")}`).join("\n")}
@@ -381,7 +388,7 @@ bot.command("qlobalreyting", ctx => {
 		`)
 		)
 	} else {
-		ctx.reply("❌ Hazırda sıralamaq mümkün deyil.")
+		ctx.reply("❌ Hazırda sıralama mümkün deyil.")
 	}
 })
 
