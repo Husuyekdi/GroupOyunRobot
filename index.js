@@ -145,6 +145,7 @@ const getRoundMessage = (chatId, round, time) => {
 📌 Məntiq Şəxsin Yaşını Tapmaq.
 ⏱️ Vaxt 14 Saniyyə
 🆘 Rəsmi Kanalımız 🆘
+🆘 @cguessgame 🆘
 ❄️ Qış Sezonu Qalibi Sən Ol ❄️
 1 - ci Yer (15 Azn) 💸
 2 - ci Yer ( 10 Azn)💸
