@@ -35,7 +35,7 @@ Məni Qrupuna Əlavə Edərək Adminlik Hüquqlarimi Ver /game Əmriylə Oyunu B
 Qrup Medyasının Açıq Olmağı Mütləqdir.
 
 	müəllif: @foundersh
-	Rəsmi Kanal: @cguessgame
+	Rəsmi Kanal: @CreatoRResmi
 `)
 const getRandomPerson = () => {
 	let imagePath = "./photos"
@@ -145,7 +145,8 @@ const getRoundMessage = (chatId, round, time) => {
 📌 Məntiq Şəxsin Yaşını Tapmaq.
 ⏱️ Vaxt 14 Saniyyə
 🆘 Rəsmi Kanalımız 🆘
-🆘 @cguessgame 🆘
+🆘 @CreatoRResmi 🆘
+
 ❄️ Qış Sezonu Qalibi Sən Ol ❄️
 1 - ci Yer (15 Azn) 💸
 2 - ci Yer ( 10 Azn)💸
@@ -287,7 +288,7 @@ bot.command("cgmelumat", ctx => {
 		trueTrim(`
 			🎈 Bizi Seçdiyiniz Üçün Təşəkkürlər 🎈
 
-			✅ Rəsmi Kanal: @cguessgame 
+			✅ Rəsmi Kanal: @CreatoRResmi
                         🧑‍💻 Qurucu: @foundersh
 		`)
 	)
