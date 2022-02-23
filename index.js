@@ -107,7 +107,7 @@ const stopGame = (ctx, chatId) => {
 						.map((member, index) => `${["🏆", "🎖", "🏅"][index] || "🔸"} ${index + 1}. ${bold(member.firstName)}: ${numberWithSpaces(member.score)} ${pluralize(member.score, "⚡xal", "⚡xal", "⚡xal")}`)
 						.join("\n")}
 
-					❤️ Botun Rəsmi Kanalına Abunə Olmağı Unutmayaq. @cguessgame.
+					❤️ Botun Rəsmi Kanalına Abunə Olmağı Unutmayaq. @CreatoRResmi
 					🔄 /game - Bir daha?
 				`)
 			)
@@ -116,7 +116,7 @@ const stopGame = (ctx, chatId) => {
 				trueTrim(`
 					*🏁 Oyun Oynamadığınız Üçün Qalib Yoxdur. .*
 
-					❤️ Botun Rəsmi Kanalına Abunə Olmağı Unutmayaq. @cguessgame.
+					❤️ Botun Rəsmi Kanalına Abunə Olmağı Unutmayaq. @CreatoRResmi
 					🔄 /game - Bir daha?
 				`)
 			)
@@ -288,7 +288,7 @@ bot.command("cgmelumat", ctx => {
 		trueTrim(`
 			🎈 Bizi Seçdiyiniz Üçün Təşəkkürlər 🎈
 
-			✅ Rəsmi Kanal: @CreatoRResmi
+			✅Rəsmi Kanal: @CreatoRResmi
                         🧑‍💻 Qurucu: @foundersh
 		`)
 	)
@@ -323,7 +323,7 @@ bot.command("catreyting", ctx => {
 						.map((member, index) => `${["🏆", "🎖", "🏅"][index] || "🔸"} ${index + 1}. ${bold(member.firstName)}: ${numberWithSpaces(member.score)} ${pluralize(member.score, "⚡xal", "⚡xal", "⚡xal")}`)
 						.join("\n")}
 
-					❤️ Botun Rəsmi Kanalına Abunə Olmağı Unutmayaq.  @cguessgame.
+					❤️ Botun Rəsmi Kanalına Abunə Olmağı Unutmayaq.  @CreatoRResmi
 					🔄 /game - Bir daha?
 				`)
 				)
@@ -380,12 +380,14 @@ bot.command("qlobalreyting", ctx => {
 		ctx.replyWithMarkdown(
 			trueTrim(`
 			*🌎 Qlobal Oyunçuların Reytingi.:*
+			 ⚡ Creator Russia 🇷🇺
+			 @GuessGameQlobalBot
 			
 			*❄️ Qış Sezonu Başladı. ❄️*
 
 			${topSlice.map((member, index) => `${["🏆", "🎖", "🏅"][index] || "🔸"} ${index + 1}. ${fromId === member.id ? "Sənin Xal: " : ""}${bold(member.firstName)}: ${numberWithSpaces(member.score)} ${pluralize(member.score, "⚡xal", "⚡xal", "⚡xal")}`).join("\n")}
 			${currentUser ? `...\n🔸 ${currentUser.index + 1}. ${bold(currentUser.firstName)}: ${numberWithSpaces(currentUser.score)} ${pluralize(currentUser.score, "⚡xal", "⚡xal", "⚡xal")}\n` : ""}
-			❤️ Bəzən yeni sərin botların dərc olunduğu müəllif kanalı @cguessgame.
+			❤️ Bəzən yeni sərin botların dərc olunduğu müəllif kanalı @CreatoRResmi
 			🔄 /game - Bir daha?
 		`)
 		)
@@ -410,7 +412,7 @@ bot.on("message", async ctx => {
 			let firstName = message.from.first_name
 			let answer = Number(message.text)
 			if (answer <= 0 || answer > 120) {
-				return ctx.reply("Ответ вне допустимого диапазона (1 - 120)", {
+				return ctx.reply("Maksimum Yaş Seçimi (1 - 120)", {
 					reply_to_message_id: ctx.message.message_id,
 				})
 			}
