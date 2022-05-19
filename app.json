@@ -1,14 +1,14 @@
 {
-    "name": "xiyarrobotBot",
-    "description": "Azərbaycan dilində Sjsjsj.",
-    "logo": "https://te.legra.ph/file/082fc9ba19f4a44b01b88.jpg",
+    "name": "GroupOyunBot",
+    "description": "@HuseynH Tərəfindən Hazırlanış Yaş Təhmini Oyun Botu.",
+    "logo": "https://telegra.ph//file/126594fe0fb9108b88a73.jpg",
     "keywords": [
         "sosis",
         "group",
         "Bot"
     ],
-    "repository": "https://github.com/",
-    "success_url": "https://github.com/",
+    "repository": "https://github.com/Hesenovhuseyn/GroupOyunRobot",
+    "success_url": "https://github.com/Hesenovhuseyn/GroupOyunRobot",
     "image": "heroku/python",
     "formation": {
         "worker": {
@@ -16,17 +16,6 @@
             "size": "free"
         }
     },
-    "env": {
-        "API_ID": {
-            "description": "my.telegram.org saytından ala bilərsiniz.",
-            "value": "",
-            "required": true
-        },
-        "API_HASH": {
-            "description": "my.telegram.org saytından ala bilərsiniz.",
-            "value": "",
-            "required": true
-        },
         "BOT_TOKEN": {
             "description": "@Botfather botundan ala bilərsiniz.",
             "value": "",
