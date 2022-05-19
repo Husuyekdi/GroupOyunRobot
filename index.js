@@ -34,8 +34,8 @@ const getGreetMessage = isGroup =>
 Məni Qrupuna Əlavə Edərək Adminlik Hüquqlarimi Ver /game Əmriylə Oyunu Başlada Bilərsiniz.
 Qrup Medyasının Açıq Olmağı Mütləqdir.
 
-	müəllif: @foundersh
-	Rəsmi Kanal: @CreatoRResmi
+	🧑‍💻 Qurucu: @Vusaliww
+	✅Rəsmi Kanal: @cGuesMasterResmi
 `)
 const getRandomPerson = () => {
 	let imagePath = "./photos"
@@ -107,7 +107,7 @@ const stopGame = (ctx, chatId) => {
 						.map((member, index) => `${["🏆", "🎖", "🏅"][index] || "🔸"} ${index + 1}. ${bold(member.firstName)}: ${numberWithSpaces(member.score)} ${pluralize(member.score, "⚡xal", "⚡xal", "⚡xal")}`)
 						.join("\n")}
 
-					❤️ Botun Rəsmi Kanalına Abunə Olmağı Unutmayaq. @CreatoRResmi
+					❤️ Botun Rəsmi Kanalına Abunə Olmağı Unutmayaq. @cGuesMasterResmi
 					🔄 /game - Bir daha?
 				`)
 			)
@@ -116,7 +116,7 @@ const stopGame = (ctx, chatId) => {
 				trueTrim(`
 					*🏁 Oyun Oynamadığınız Üçün Qalib Yoxdur. .*
 
-					❤️ Botun Rəsmi Kanalına Abunə Olmağı Unutmayaq. @CreatoRResmi
+					❤️ Botun Rəsmi Kanalına Abunə Olmağı Unutmayaq. @cGuesMasterResmi
 					🔄 /game - Bir daha?
 				`)
 			)
@@ -145,9 +145,9 @@ const getRoundMessage = (chatId, round, time) => {
 📌 Məntiq Şəxsin Yaşını Tapmaq.
 ⏱️ Vaxt 14 Saniyyə
 🆘 Rəsmi Kanalımız 🆘
-🆘 @CreatoRResmi 🆘
+🆘 @cGuesMasterResmi 🆘
 
-❄️ Qış Sezonu Qalibi Sən Ol ❄️
+⚡ Yay Sezonu Qalibi Sən Ol ⚡
 1 - ci Yer (15 Azn) 💸
 2 - ci Yer ( 10 Azn)💸
 3 - cü Yer ( 5 Azn) 💸
@@ -288,8 +288,8 @@ bot.command("cgmelumat", ctx => {
 		trueTrim(`
 			🎈 Bizi Seçdiyiniz Üçün Təşəkkürlər 🎈
 
-			✅Rəsmi Kanal: @CreatoRResmi
-                        🧑‍💻 Qurucu: @foundersh
+			✅Rəsmi Kanal: @cGuesMasterResmi
+                        🧑‍💻 Qurucu: @Vusaliww
 		`)
 	)
 })
@@ -323,7 +323,7 @@ bot.command("catreyting", ctx => {
 						.map((member, index) => `${["🏆", "🎖", "🏅"][index] || "🔸"} ${index + 1}. ${bold(member.firstName)}: ${numberWithSpaces(member.score)} ${pluralize(member.score, "⚡xal", "⚡xal", "⚡xal")}`)
 						.join("\n")}
 
-					❤️ Botun Rəsmi Kanalına Abunə Olmağı Unutmayaq.  @CreatoRResmi
+					❤️ Botun Rəsmi Kanalına Abunə Olmağı Unutmayaq.  @cGuesMasterResmi
 					🔄 /game - Bir daha?
 				`)
 				)
@@ -381,13 +381,13 @@ bot.command("qlobalreyting", ctx => {
 			trueTrim(`
 			*🌎 Qlobal Oyunçuların Reytingi.:*
 			 ⚡ Creator Russia 🇷🇺
-			 @GuessGameQlobalBot
+			 @cGuesMasterResmi
 			
-			*❄️ Qış Sezonu Başladı. ❄️*
+			*⚡ Yay Sezonu Başladı. ⚡*
 
 			${topSlice.map((member, index) => `${["🏆", "🎖", "🏅"][index] || "🔸"} ${index + 1}. ${fromId === member.id ? "Sənin Xal: " : ""}${bold(member.firstName)}: ${numberWithSpaces(member.score)} ${pluralize(member.score, "⚡xal", "⚡xal", "⚡xal")}`).join("\n")}
 			${currentUser ? `...\n🔸 ${currentUser.index + 1}. ${bold(currentUser.firstName)}: ${numberWithSpaces(currentUser.score)} ${pluralize(currentUser.score, "⚡xal", "⚡xal", "⚡xal")}\n` : ""}
-			❤️ Bəzən yeni sərin botların dərc olunduğu müəllif kanalı @CreatoRResmi
+			❤️ Bəzən yeni sərin botların dərc olunduğu müəllif kanalı @cGuesMasterResmi
 			🔄 /game - Bir daha?
 		`)
 		)
