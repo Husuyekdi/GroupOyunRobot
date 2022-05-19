@@ -1,0 +1,41 @@
+{
+    "name": "xiyarrobotBot",
+    "description": "Azərbaycan dilində Sjsjsj.",
+    "logo": "https://te.legra.ph/file/082fc9ba19f4a44b01b88.jpg",
+    "keywords": [
+        "sosis",
+        "group",
+        "Bot"
+    ],
+    "repository": "https://github.com/",
+    "success_url": "https://github.com/",
+    "image": "heroku/python",
+    "formation": {
+        "worker": {
+            "quantity": 1,
+            "size": "free"
+        }
+    },
+    "env": {
+        "API_ID": {
+            "description": "my.telegram.org saytından ala bilərsiniz.",
+            "value": "",
+            "required": true
+        },
+        "API_HASH": {
+            "description": "my.telegram.org saytından ala bilərsiniz.",
+            "value": "",
+            "required": true
+        },
+        "BOT_TOKEN": {
+            "description": "@Botfather botundan ala bilərsiniz.",
+            "value": "",
+            "required": true
+        }
+ },
+ "buildpacks": [
+  {
+   "url": "heroku/nodejs"
+  }
+ ]
+}
