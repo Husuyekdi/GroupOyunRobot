@@ -21,21 +21,19 @@ const getGreetMessage = isGroup =>
 	trueTrim(`
 	👋 Salam. Mən qrup çatlarında "yaşı təxmin et" oynamaq üçün bir robotam
 
-	📋 Qaydalar sadədir: mən sizə bir insanın şəklini atıram və sizin vəzifəniz onun yaşını təxmin etməkdir. Nə qədər dəqiq cavab versəniz, bir o qədər az xal itirirsiniz.
-	${isGroup ? "" : "\n😉 Əvvəlcə məni söhbətə əlavə edin və Adminlik Hüquqlarımı verin  /game.\n"}
-	*Əmrlər*
-	/game - 🕹 Yeni Oyun
-	/stop - 🛑 Oyunu Dayandır
-	/catreyting - 🔝 Çat Reyting 
-	/qlobalreyting - 🌎 Qlobal Reyting
-	/cgmelumat - 📌 CGG
+	📋 Qaydalar: Mən sizə həmin şəxsin şəklini atıram, sizin vəzifəniz onun yaşını təxmin etməkdir.  Nə qədər dəqiq cavab versəniz, bir o qədər az xal itirəcəksiniz.
 	
-	ℹ️ Qurmaq 
-Məni Qrupuna Əlavə Edərək Adminlik Hüquqlarimi Ver /game Əmriylə Oyunu Başlada Bilərsiniz.
-Qrup Medyasının Açıq Olmağı Mütləqdir.
-
-	🧑‍💻 Qurucu: @Vusaliww
-	✅Rəsmi Kanal: @cGuesMasterResmi
+	ℹ *Qurulum*
+	${isGroup ? "" : "\n😉 Məndən Heçbir Adminlik İcazələri Olmadan İstifadə Edə Bilərsiniz .\n"}
+	
+	*📝 Əmrlər*
+	/game - 🕹 Oyunu Başlat
+	/stop - 🛑 Oyunu Dayandır
+	/top - 🔝 Qrup Oyunçu Xalları
+	/chart - 🌎 Qlobal Reyting
+	/botlist - 📌 Hazır deyil
+	
+	🧑‍💻 Sahibim: @HuseynH
 `)
 const getRandomPerson = () => {
 	let imagePath = "./photos"
@@ -122,7 +120,7 @@ const stopGame = (ctx, chatId) => {
 			)
 		}
 	} else {
-		ctx.reply("❌ Oyun işə salınmayıb. Onu əmrlə başlada bilərsiniz /game.")
+		ctx.reply("❌ Qrupuunuzda  Oyun  Başladılmayıb  /game Əmri ilə Başlada Bilərsiniz.")
 	}
 }
 const getRoundMessage = (chatId, round, time) => {
@@ -141,16 +139,13 @@ const getRoundMessage = (chatId, round, time) => {
 
 	return trueTrim(`
 		*❕ Raund  ${round + 1}/${config.rounds}*
-		🪁 Sizcə Şəkildəki Şəxs Neçə Yaşındadır 🤔
-📌 Məntiq Şəxsin Yaşını Tapmaq.
-⏱️ Vaxt 14 Saniyyə
-🆘 Rəsmi Kanalımız 🆘
-🆘 @cGuesMasterResmi 🆘
+		
+📌 Şəkil Dəki Şəxsin Yaşını Tapmın.
+⏱️ Vaxt 20 Saniyyə
 
-⚡ Yay Sezonu Qalibi Sən Ol ⚡
-1 - ci Yer (15 Azn) 💸
-2 - ci Yer ( 10 Azn)💸
-3 - cü Yer ( 5 Azn) 💸
+🤖 Musiqi Botumuz 🤖
+🎶 @MusicAzBot 🎶
+
 		${answers.length > 0 ? `\n${answers.map((member, index) => `${index + 1}. *${member.firstName}*: ${member.answer}`).join("\n")}\n` : ""}
 		${"⬛".repeat(time)}${"⬜".repeat(config.timerSteps - time)}
 	`)
@@ -217,7 +212,7 @@ const startGame = (ctx, chatId) => {
 					}
 				)
 			} else {
-				ctx.reply("❕ Oynamadığınız Üçün Oyunu Sonlandırdım ❕.")
+				ctx.reply(" Mənim lə Oynamadığın Üçün Oyunu Sonlandırdım 🥺 .")
 				stopGame(ctx, chatId)
 				return
 			}
@@ -283,18 +278,15 @@ bot.command("stop", ctx => {
 	}
 })
 
-bot.command("cgmelumat", ctx => {
+bot.command("alive", ctx => {
 	return ctx.replyWithMarkdown(
 		trueTrim(`
-			🎈 Bizi Seçdiyiniz Üçün Təşəkkürlər 🎈
-
-			✅Rəsmi Kanal: @cGuesMasterResmi
-                        🧑‍💻 Qurucu: @Vusaliww
+  Mən İşləyirəm Botda Yaşanacaq Hadisəni Sahibimə Bildirin
 		`)
 	)
 })
 
-bot.command("catreyting", ctx => {
+bot.command("top", ctx => {
 	let message = ctx.update.message
 	if (message.chat.id < 0) {
 		let chatId = message.chat.id
@@ -338,7 +330,7 @@ bot.command("catreyting", ctx => {
 	}
 })
 
-bot.command("qlobalreyting", ctx => {
+bot.command("chart", ctx => {
 	const fromId = String(ctx.update.message.from.id)
 	const data = db.read()
 	let top = []
@@ -380,10 +372,8 @@ bot.command("qlobalreyting", ctx => {
 		ctx.replyWithMarkdown(
 			trueTrim(`
 			*🌎 Qlobal Oyunçuların Reytingi.:*
-			 ⚡ Creator Russia 🇷🇺
-			 @cGuesMasterResmi
 			
-			*⚡ Yay Sezonu Başladı. ⚡*
+			*🏜 Yay Sezonu Başladı. ⚡*
 
 			${topSlice.map((member, index) => `${["🏆", "🎖", "🏅"][index] || "🔸"} ${index + 1}. ${fromId === member.id ? "Sənin Xal: " : ""}${bold(member.firstName)}: ${numberWithSpaces(member.score)} ${pluralize(member.score, "⚡xal", "⚡xal", "⚡xal")}`).join("\n")}
 			${currentUser ? `...\n🔸 ${currentUser.index + 1}. ${bold(currentUser.firstName)}: ${numberWithSpaces(currentUser.score)} ${pluralize(currentUser.score, "⚡xal", "⚡xal", "⚡xal")}\n` : ""}
