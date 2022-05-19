@@ -1,7 +1,7 @@
 module.exports = {
-	token: "5240844969:AAFctpnzMBtTQNCbRyv1fkY3OKvH552kUeg",
-	botId: 5240844969, //first numbers of BOT_TOKEN
+	token: "5313016685:AAG7ON_J2HjhOtGxDUUB3zx330wJT97Npt4",
+	botId: 5313016685, //first numbers of BOT_TOKEN
 	rounds: 20, //rounds amount
 	waitDelay: 12000, //1 round duration
-	timerSteps: 4, //timer indicators
+	timerSteps: 5, //timer indicators
 }
